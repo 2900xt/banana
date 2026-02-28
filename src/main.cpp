@@ -18,6 +18,14 @@ lemlib::Drivetrain drivetrain(&left_motors, // left motor group
 pros::Imu imu(10);
 
 
+lemlib::OdomSensors sensors(nullptr, // vertical tracking wheel 1, set to null
+                            nullptr, // vertical tracking wheel 2, set to nullptr as we are using IMEs
+                            nullptr, // horizontal tracking wheel 1
+                            nullptr, // horizontal tracking wheel 2, set to nullptr as we don't have a second one
+                            &imu // inertial sensor
+);
+
+
 
 /**
  * A callback function for LLEMU's center button.
@@ -34,6 +42,8 @@ void on_center_button() {
 		pros::lcd::clear_line(2);
 	}
 }
+
+
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
