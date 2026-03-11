@@ -123,7 +123,7 @@ void alignToWall(double target_mm = 20.0, int timeout_ms = 1500) {
 
 void autonomous() {
     // Set initial pose (converted from path.jerryio cm to inches)
-    // Start position: (167.596, -37.374) cm = (65.98, -14.71) in
+    // Start: (167.596, -37.374) cm = (65.98, -14.71) in
     chassis.setPose(65.98, -14.71, 0);
 
     // ===== FIRST SETUP: Push forward along wall, passing park zone =====
@@ -131,8 +131,8 @@ void autonomous() {
     intake.move_velocity(100);
     intake_roller.move_velocity(100);
 
-    // Move forward to (168.84, 38.10) cm = (66.47, 15.00) in
-    chassis.moveToPoint(66.47, 15.00, 3000, {.forwards=false});
+    // (168.84, 38.83) cm = (66.47, 15.29) in
+    chassis.moveToPoint(66.47, 15.29, 3000, {.forwards=false});
     // Stop intake + roller after reaching first waypoint
     intake.move_velocity(0);
     intake_roller.move_velocity(0);
@@ -140,88 +140,75 @@ void autonomous() {
     // Align 2cm from wall to ensure we pass the park zone completely
     alignToWall(20.0, 1500);
 
-    // ===== Curve left to push game elements =====
-    // (59.77, 61.74) cm = (23.53, 24.31) in
-    chassis.moveToPoint(23.53, 24.31, 3000);
+    // (60.789, 61.515) cm = (23.93, 24.22) in
+    chassis.moveToPoint(23.93, 24.22, 3000);
 
-    // (14.56, 14.47) cm = (5.73, 5.69) in
-    chassis.moveToPoint(5.73, 5.69, 3000);
+    // (14.572, 14.473) cm = (5.74, 5.70) in
+    chassis.moveToPoint(5.74, 5.70, 3000);
 
-    // ===== Push back right =====
-    // (118.66, 60.08) cm = (46.72, 23.66) in
-    chassis.moveToPoint(46.72, 23.66, 4000);
+    // (118.628, 60.071) cm = (46.70, 23.65) in
+    chassis.moveToPoint(46.70, 23.65, 4000);
 
-    // ===== Move up to upper zone =====
-    // (117.42, 118.97) cm = (46.23, 46.84) in
-    chassis.moveToPoint(46.23, 46.84, 3000);
+    // (117.406, 119.887) cm = (46.22, 47.20) in
+    chassis.moveToPoint(46.22, 47.20, 3000);
 
-    // (174.23, 118.97) cm = (68.60, 46.84) in
-    chassis.moveToPoint(68.60, 46.84, 3000);
+    // (174.814, 118.978) cm = (68.82, 46.84) in
+    chassis.moveToPoint(68.82, 46.84, 3000);
 
-    // ===== Curve to sweep upper field =====
-    // (117.00, 155.88) cm = (46.06, 61.37) in
-    chassis.moveToPoint(46.06, 61.37, 3000);
+    // (117.018, 155.873) cm = (46.07, 61.37) in
+    chassis.moveToPoint(46.07, 61.37, 3000);
 
-    // ===== Long sweep across top to left side =====
-    // (-120.22, 160.86) cm = (-47.33, 63.33) in
-    chassis.moveToPoint(-47.33, 63.33, 5000);
+    // (-117.552, 160.809) cm = (-46.28, 63.31) in
+    chassis.moveToPoint(-46.28, 63.31, 5000);
 
-    // ===== Drop down on left side =====
-    // (-121.05, 119.80) cm = (-47.66, 47.17) in
+    // (-121.048, 119.799) cm = (-47.66, 47.17) in
     chassis.moveToPoint(-47.66, 47.17, 3000);
 
-    // ===== Sweep right then back left =====
-    // (-57.18, 120.22) cm = (-22.51, 47.33) in
-    chassis.moveToPoint(-22.51, 47.33, 3000);
+    // (-57.796, 120.211) cm = (-22.76, 47.33) in
+    chassis.moveToPoint(-22.76, 47.33, 3000);
 
-    // (-171.23, 119.39) cm = (-67.41, 46.97) in
-    chassis.moveToPoint(-67.41, 46.97, 4000);
+    // (-171.112, 119.39) cm = (-67.37, 47.00) in
+    chassis.moveToPoint(-67.37, 47.00, 4000);
 
-    // ===== Drop down left side =====
-    // (-118.56, 76.67) cm = (-46.68, 30.19) in
-    chassis.moveToPoint(-46.68, 30.19, 3000);
+    // (-118.169, 76.352) cm = (-46.52, 30.06) in
+    chassis.moveToPoint(-46.52, 30.06, 3000);
 
-    // (-162.93, 60.08) cm = (-64.15, 23.66) in
-    chassis.moveToPoint(-64.15, 23.66, 3000);
+    // (-163.278, 59.947) cm = (-64.28, 23.60) in
+    chassis.moveToPoint(-64.28, 23.60, 3000);
 
-    // ===== Move down to lower half =====
-    // (-172.47, -56.87) cm = (-67.90, -22.39) in
-    chassis.moveToPoint(-67.90, -22.39, 4000);
+    // (-172.399, -55.917) cm = (-67.87, -22.01) in
+    chassis.moveToPoint(-67.87, -22.01, 4000);
 
-    // (-122.71, -58.53) cm = (-48.31, -23.04) in
-    chassis.moveToPoint(-48.31, -23.04, 3000);
+    // (-122.187, -58.549) cm = (-48.11, -23.05) in
+    chassis.moveToPoint(-48.11, -23.05, 3000);
 
-    // (-125.61, -118.66) cm = (-49.45, -46.72) in
-    chassis.moveToPoint(-49.45, -46.72, 3000);
+    // (-125.576, -118.05) cm = (-49.44, -46.48) in
+    chassis.moveToPoint(-49.44, -46.48, 3000);
 
-    // (-168.74, -119.49) cm = (-66.43, -47.04) in
-    chassis.moveToPoint(-66.43, -47.04, 3000);
+    // (-168.696, -119.488) cm = (-66.42, -47.04) in
+    chassis.moveToPoint(-66.42, -47.04, 3000);
 
-    // ===== Sweep across bottom =====
-    // (-118.15, -160.55) cm = (-46.51, -63.21) in
-    chassis.moveToPoint(-46.51, -63.21, 3000);
+    // (-117.485, -161.057) cm = (-46.25, -63.41) in
+    chassis.moveToPoint(-46.25, -63.41, 3000);
 
-    // ===== Long sweep across bottom to right side =====
-    // (121.15, -158.89) cm = (47.70, -62.56) in
-    chassis.moveToPoint(47.70, -62.56, 5000);
+    // (118.738, -158.908) cm = (46.75, -62.56) in
+    chassis.moveToPoint(46.75, -62.56, 5000);
 
-    // ===== Work right side lower =====
-    // (122.39, -119.90) cm = (48.19, -47.21) in
-    chassis.moveToPoint(48.19, -47.21, 3000);
+    // (122.366, -118.504) cm = (48.17, -46.66) in
+    chassis.moveToPoint(48.17, -46.66, 3000);
 
-    // (50.65, -121.56) cm = (19.94, -47.86) in
-    chassis.moveToPoint(19.94, -47.86, 3000);
+    // (51.138, -121.548) cm = (20.13, -47.85) in
+    chassis.moveToPoint(20.13, -47.85, 3000);
 
-    // (172.57, -118.66) cm = (67.94, -46.72) in
-    chassis.moveToPoint(67.94, -46.72, 4000);
+    // (172.606, -118.658) cm = (67.95, -46.72) in
+    chassis.moveToPoint(67.95, -46.72, 4000);
 
     // ===== DIRECTION CHANGE: Score on lower stake =====
-    // No wall alignment from here - heading to score
-    // (149.76, -110.78) cm = (58.96, -43.61) in
-    chassis.moveToPoint(58.96, -43.61, 2000);
+    // (149.524, -110.684) cm = (58.87, -43.58) in
+    chassis.moveToPoint(58.87, -43.58, 2000);
 
     // Final approach to lower stake
-    // (148.52, 5.34) cm = (58.47, 2.10) in
+    // (148.519, 5.342) cm = (58.47, 2.10) in
     chassis.moveToPoint(58.47, 2.10, 4000);
 }
 
