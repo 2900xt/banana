@@ -1,0 +1,20 @@
+CompileFlags:
+  Add:
+    - "-xc++"
+    - "-std=gnu++17"
+    - "-target"
+    - "arm-none-eabi"
+    - "-nostdinc++"
+    - "-I/home/taha/Code/banana/include"
+    - "-isystem/home/taha/.config/Code/User/globalStorage/sigbots.pros/install/pros-toolchain-linux/arm-none-eabi/include/c++/14.3.1"
+    - "-isystem/home/taha/.config/Code/User/globalStorage/sigbots.pros/install/pros-toolchain-linux/arm-none-eabi/include/c++/14.3.1/arm-none-eabi"
+    - "-isystem/home/taha/.config/Code/User/globalStorage/sigbots.pros/install/pros-toolchain-linux/arm-none-eabi/include/c++/14.3.1/backward"
+    - "-isystem/home/taha/.config/Code/User/globalStorage/sigbots.pros/install/pros-toolchain-linux/lib/gcc/arm-none-eabi/14.3.1/include"
+    - "-isystem/home/taha/.config/Code/User/globalStorage/sigbots.pros/install/pros-toolchain-linux/lib/gcc/arm-none-eabi/14.3.1/include-fixed"
+    - "-isystem/home/taha/.config/Code/User/globalStorage/sigbots.pros/install/pros-toolchain-linux/arm-none-eabi/include"
+    - "-D__GNUC__=14"
+    - "-D__ARM_ARCH_7A__"
+    - "-DONLINE_JUDGE"
+  Remove:
+    - "-m*"
+    - "-W*"
