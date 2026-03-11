@@ -27,8 +27,8 @@ lemlib::Drivetrain drivetrain(&left_motors, // left motor group
 pros::Imu imu(10);
 
 // distance sensors
-pros::Distance distance_front(11); // forward-facing distance sensor
-pros::Distance distance_left(12);  // left-facing distance sensor
+pros::Distance distance_front(14); // forward-facing (Y axis)
+pros::Distance distance_left(15);  // left-facing (X axis)
 
 // odom sensors (using IMEs only, no tracking wheels)
 lemlib::OdomSensors sensors(nullptr, // vertical tracking wheel 1
